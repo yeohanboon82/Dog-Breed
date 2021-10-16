@@ -1,0 +1,47 @@
+<!doctype html>
+<title>Predict Dog Breed Web App</title>
+<h1>What is the dog breed?</h1>
+<hr />
+<h2>Load a dog image to predict.</h2>
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Load">
+	</p>
+</form>
+
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+{% if filename %}
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+{% endif %}
+
+<br>
+<hr />
+<h2>Predict a dog breed.</h2>
+<div class="row">
+    <div class="col-lg-12 form-group-lg">
+        <form action="/predict" method="get">
+            <div class="col-lg-offset-5">
+                <button type="submit" class="btn btn-lg btn-success">Predict</button>
+            </div>
+        </form>
+    </div>
+</div>

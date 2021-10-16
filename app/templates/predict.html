@@ -1,0 +1,42 @@
+<!doctype html>
+<div>
+    <div>
+        <h1>What is the dog breed?</h1>
+        <hr />
+        <h2>Prediction Result</h2>
+        
+
+        <p>
+        	{% with messages = get_flashed_messages() %}
+        	  {% if messages %}
+        		<ul>
+        		{% for message in messages %}
+        		  <li>{{ message }}</li>
+        		{% endfor %}
+        		</ul>
+        	  {% endif %}
+        	{% endwith %}
+        </p>
+
+        <div class="row">
+            <div class="col-lg-12 form-group-lg">
+
+        		<img src="static/predict/predict.jpg"> 
+
+            </div>
+        </div>
+
+        {% block message %}
+        {% endblock %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 form-group-lg">
+        <form action="/" method="get">
+            <div class="col-lg-offset-5">
+                <button type="submit" class="btn btn-lg btn-success">Back</button>
+            </div>
+        </form>
+    </div>
+</div>
