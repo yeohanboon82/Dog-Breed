@@ -24,7 +24,7 @@ Using ResNet50 model for improvement and further implementation and have attaine
 ### Conclusion:
 
 Algorithm Performance:
-- The algorithm is performing better than expected. Out of the 8 tested dog images, 6 were predicted correctly with confidence rate of more than 70%. 
+- The algorithm is performing as expected with an accuracy of about 80%. Out of the 8 tested dog images, 6 were predicted correctly with confidence rate of more than 70%. 
 - One of the dog image is Shih Tzu (not in the trained classes) and is misintepreted as a Maltese. Also a chihuahua is misclassified as a German pinscher.
 - For the case of misclassification of shih tzu, it would improve the algorithm with more training data of more dog breeds.
 - For the case of misclassification of pinscher could be due to dogs which looks similarbut of different size. Would improve the algorithm if there is a way to intepret dog size from the image. 
